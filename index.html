@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Trek Wireframe</title>
+
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
+        <!-- Moment JS -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+            <!-- Google Fonts
+            <link href="https://fonts.googleapis.com/css?family=Jomhuria&display=swap" rel="stylesheet"> -->
+        
+        
+    </head>
+
+    <body>
+        <!-- Navbar with Trek logo -->
+        <nav class="navbar navbar-light bg-light">
+            <img src="./assets/images/logo1.png" alt="Trek logo placeholder art" width="200px" />       
+            <p id="navTagline">Simplify Your Travel</p>
+        </nav>
+    
+        <div class="container">
+            <!-- Search section -->
+            <div class="row" id="searchSection">
+                <div class="col-sm-12">
+                    <h3>Where are you going?</h3>
+                    <form>
+                        <div class="form-group">
+                            <!-- <label>Search</label> -->
+                            <input type="text" class="form-control" id="searchInput" placeholder="Enter a location name">
+                        </div>
+                    </form>
+                    <button type="button" id="searchButton" class="btn btn-primary">Search</button>                      
+                </div>
+            </div>
+
+            <!-- Events section -->
+            <div class="row" id="eventsSection">    
+                <div class="col-sm-12" id="sectionHeaders">
+                    <h3>EVENTS</h3>
+                    <p class="intro-text">Check out the local events happening in your area.</p>      
+                </div>
+                <div class="col-sm-4">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationOne"
+                            width="400px"
+                            height="300px" />
+                        <h4>LocationOne</h4>
+                    </a>
+                    <p>fieldA:</p> 
+                    <p>fieldB:</p>       
+                </div>
+                <div class="col-sm-4">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationTwo"
+                            width="400px"
+                            height="300px" />
+                        <h4>LocationTwo</h4>
+                    </a>
+                    <p>fieldA:</p> 
+                    <p>fieldB:</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationThree"
+                            width="400px"
+                            height="300px" />
+                        <h4>LocationThree</h4>
+                    </a>
+                    <p>fieldA:</p> 
+                    <p>fieldB:</p>       
+                </div>
+            </div>
+                    
+            <!-- Food section -->
+            <div class="row" id="foodSection">    
+                <div class="col-sm-12" id="sectionHeaders">
+                    <h3>FOOD</h3>
+                    <p class="intro-text">Try some of the local flavors in your area.</p>      
+                </div>
+                <div class="col-sm-6">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationFour"
+                            width="575px"
+                            height="375px" />        
+                        <h4>LocationFour</h4>
+                    </a>
+                    <p>fieldC:</p> 
+                    <p>fieldD:</p>       
+                </div>
+                <div class="col-sm-6">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationFive"
+                            width="575px"
+                            height="375px" />            
+                        <h4>LocationFive</h4>
+                    </a>
+                    <p>fieldC:</p> 
+                    <p>fieldD:</p>       
+                </div>
+            </div>
+
+            <!-- Travel section -->
+            <div class="row" id="travelSection">    
+                <div class="col-sm-12" id="sectionHeaders">
+                    <h3>TRAVEL</h3>
+                    <p class="intro-text">Only have 36-Hours? We've mapped it out for you.</p>      
+                </div>
+                <div class="col-sm-3">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationSix"
+                            width="300px"
+                            height="200px" />            
+                        <h4>LocationSix</h4>
+                    </a>
+                    <p>fieldE:</p> 
+                    <p>fieldF:</p>       
+                </div>
+                <div class="col-sm-3">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationSeven"
+                            width="300px"
+                            height="200px" />            
+                        <h4>LocationSeven</h4>
+                    </a>
+                    <p>fieldE:</p> 
+                    <p>fieldF:</p>       
+                </div>
+                <div class="col-sm-3">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationEight"
+                            width="300px"
+                            height="200px" />            
+                        <h4>LocationEight</h4>
+                    </a>
+                    <p>fieldE:</p> 
+                    <p>fieldF:</p>       
+                </div>
+                <div class="col-sm-3">
+                    <a href="#">
+                        <img class="img img-thumbnail" src="#"
+                            alt="photo of locationNine"
+                            width="300px"
+                            height="200px" />            
+                        <h4>LocationNine</h4>
+                    </a>
+                    <p>fieldE:</p> 
+                    <p>fieldF:</p>       
+                </div>
+            </div>
+
+            <!-- Weather section -->
+            
+            <div class="col-sm-12" id="weatherForecast">
+                <h2>Weather Forecast for Your Area</h2>
+                <div>
+                            <!-- Add Weather Forecast and API data -->
+                </div>                      
+            </div>
+        </div>
+
+
+
+        <!-- Firebase Core JavaScript link -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+        <!-- Specific Firebase products link -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+        <!-- jQuery link -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Moment.js link -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <!--JavaScript -->
+        <script type="text/javascript" src="./assets/javascript/schedule-app.js"></script> 
+    </body>
+</html>
