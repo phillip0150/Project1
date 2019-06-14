@@ -1,64 +1,58 @@
 
-        body {
-            margin: 0;
-            background-color: #FFFFFF;
-        }   
+body {
+    margin: 0;
+    background-color: #FFFFFF;
+}   
 
-        nav {
-            text-align: center;
-            background-color: #7568FF;
-            color: whitesmoke;
-        }
+nav {
+    text-align: center;
+    background-color: #7568FF;
+    color: whitesmoke;
+}
 
-        #navTagline {
-            font-size: 16px;
-        }
+.card {
+    background-color: #C3BEF7;
+}
 
-        h3 {
-            color: #7568FF;
-            text-align: center;
-            margin-top: 30px;
-        }
+#navTagline {
+    font-size: 16px;
+}
 
-        h2 {
-            color: #7568FF;
-            text-align: center;
-        }
-        /* Events columns */
-        .col-sm-4 {
-            background-color: #E5ECF4;
-        }
+h3 {
+    color: #7568FF;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #7568FF;
+    text-align: center;
+}
         
-        /* Food columns */
-        .col-sm-6 {
-            background-color: #E5ECF4;
-        }
+.card {
+    background-color: #E5ECF4;
+}
+        
+.intro-text {
+    text-align: center
+}
 
-        /* Travel columns */
-        .col-sm-3 {
-            background-color: #E5ECF4;
-        }
+#searchSection {
+    background-color: #EFFFFA;
+}
 
-        .intro-text {
-            text-align: center
-        }
+#searchButton {
+    background-color: #7568FF;
+    margin-left: 533px;
+    margin-bottom: 30px;
+}
 
-        #searchSection {
-            background-color: #EFFFFA;
-        }
+#sectionHeaders {
+    background-color: #FFFFFF;
+}
 
-        #searchButton {
-            background-color: #7568FF;
-            margin-left: 533px;
-            margin-bottom: 30px;
-        }
-
-        #sectionHeaders {
-            background-color: #FFFFFF;
-        }
-
-        #weatherForecast {
-            background-color: #C3BEF7;
-            margin-top: 40px;
-            border: 1px solid #E5ECF4;
-        }
+#weatherForecast {
+    background-color: #C3BEF7;
+    margin-top: 40px;
+    border: 1px solid #E5ECF4;
+}
