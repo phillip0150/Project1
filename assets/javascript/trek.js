@@ -16,7 +16,7 @@ $("#weatherForecast").hide();
 //a function to update weather
 //if we get a response from the data base, we call this function
 function updateWeather(weatherData){
-    
+
     $("#weatherForecast").show();
 }
 
@@ -35,6 +35,8 @@ function updateNYT(nytData){
 function updateYelp(yelpData){
     $("#eventSection").show();
     $("#foodSection").show();
+
+
 }
 
 //When a button is clicked, we want to grab that value and use that value to search our apis
