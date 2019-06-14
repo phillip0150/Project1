@@ -29,6 +29,12 @@ function updateSky(skyData){
 //a function to update NYT
 //if we get a response from the data base, we call this function
 function updateNYT(nytData){
+    for(var i =0; i<3; i++){
+    var article = nytData.response.docs;
+    
+    console.log(nytData.response.docs[i].web_url);
+    }
+
     $("#travelSection").show();
 }
 
@@ -40,15 +46,17 @@ function updateYelp(yelpData){
 }
 
 //When a button is clicked, we want to grab that value and use that value to search our apis
-$("#searchButton").on("click", function() {
+$("button").on("click", function() {
+    console.log("in button click");
     //we want to get the users input
     //we do that by getting the id of the input and then the val
-    userInput = $("#searchInput").val();
+    userInput = $("#searchInput").val().trim();
+    console.log(userInput);
 
     //next we want to set a query's
     queryWeather = "Whatever the url is"+userInput+"api key";
     querySky = "Whatever the url is"+userInput+"api key";
-    queryNYT = "Whatever the url is"+userInput+"api key";
+    queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=headline:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
     queryYelp = "Whatever the url is"+userInput+"api key";
 
     //next we are going to call our api's
