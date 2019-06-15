@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ee1679dbc5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>  
+
+
+</head>
+<body>
+    <script>
+        var city = "miami"
+        var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+city+"&limit=3";
+        //query restauran data yelp
+        $.ajax({
+           url: myurl,
+           headers: {
+            'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
+           },
+           method:"GET",
+        }).then(function(response) {
+            console.log(response);
+            //console data from yelp
+            console.log(response.businesses[0].name);
+            console.log(response.businesses[0].price);
+
+            console.log(response.businesses[0].url);
+            console.log(response.businesses[0].imageurl);
+
+            for(var i=0; i<response.businesses.length ; i++){
+            //set rb as response.businesses
+            var rb = response.businesses[i];
+            //set variables from the API to the variables
+            var name = rb.name;
+            var price = rb.price;
+            var rating = rb.rating; 
+            var yelpLink = rb.url;
+            var picture = rb.imageurl;
+
+            console.log(name);
+            console.log(price);
+            console.log(rating);
+            console.log(yelpLink);
+
+
+
+            }
+
+            
+        
+         });
+
+
+         //query events location
+         
+         var myurl2 ="https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+city+"&limit=3";
+         $.ajax({
+           url: myurl2,
+           headers: {
+            'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
+           },
+           method:"GET",
+        }).then(function(response) {
+            console.log(response);
+            //console data from yelp
+            
+            console.log(response.events[1].name);
+            console.log(response.events[1].description);
+
+            console.log(response.events[1].is_free);
+            console.log(response.events[1].event_site_url);
+
+            for(var j=0; j<response.events.length ; j++){
+            
+            //  set rt as response.businesses
+            var rt = response.events[j];
+            //set variables from the API to the variables
+            var nameEvent = rt.name;
+            var description = rt.description;
+            var free = rt.is_free;
+            var eventUrl = rt.event_site_url;
+            var imageEvent = rt.imageurl;
+
+            console.log(nameEvent);
+            console.log(description);
+            console.log(free);
+            console.log(eventUrl);
+
+
+
+            }
+
+            
+        
+         });
+    
+        
+      
+       
+
+     </script>
+
+</body>
+</html>
