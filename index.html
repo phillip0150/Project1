@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Trek Wireframe</title>
 
+     
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,8 +22,11 @@
     <body>
         <!-- Navbar with Trek logo -->
         <nav class="navbar navbar-light bg-light">
+                
+                
             <img src="./assets/images/logo1.png" alt="Trek logo placeholder art" width="200px" />       
             <p id="navTagline">Simplify Your Travel</p>
+        
         </nav>
     
         <div class="container">
@@ -39,6 +43,14 @@
                     <button type="button" id="searchButton" class="btn btn-primary">Search</button>                      
                 </div>
             </div>
+
+            <!-- Weather -->
+        <div class="row" id="weatherForecast">
+            <div class="col-sm-12" id="weatherForecast">
+                    <h2 id="weatherHeader"></h2>
+                     <h3 id="tempText"></h3>     
+            </div>
+        </div>
 
             <!-- Events section -->
             <div class="row" id="eventsSection">    
@@ -119,54 +131,49 @@
             <!-- Travel section -->
             <div class="row" id="travelSection">    
                 <div class="col-sm-12" id="sectionHeaders">
-                    <h3>TRAVEL</h3>
-                    <p class="intro-text">Only have 36-Hours? We've mapped it out for you.</p>      
+                    <h3>TRAVEL NEWS</h3>
+                    <p class="intro-text">Here are some current New York Times Travel Articles:</p>      
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" id="cardTravelImage0" style="width: 26rem;">
-                        <a href="#">
-                            <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card" id="cardTravelImage0" style="width: 100%">
+                        <a id='travelURL0' href="#">
+                            <img class="card-img-top" src="https://yt3.ggpht.com/a/AGF-l7_LHdOJn-5BQqXnt1LtUjUe4CMM6RBJns378Q=s900-mo-c-c0xffffffff-rj-k-no" width='100%' alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Image Title 0</h5>
-                            <p class="card-text" id="descTravel0"><span id="fieldE">Some quick example text to build on the card title.</span></p>
-                            <p class="card-text" id="descravel0"><span id="fieldF">Example text.</span></p>
+                            <h5 class="card-title" id="headTravel0">Image Title 0</h5>
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="col-sm-3">
-                    <div class="card" id="cardTravelImage1" style="width: 26rem;">
-                        <a href="#">
-                            <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card" id="cardTravelImage1" style="width: 100%">
+                        <a id='travelURL1' href="#">
+                            <img class="card-img-top" src="https://yt3.ggpht.com/a/AGF-l7_LHdOJn-5BQqXnt1LtUjUe4CMM6RBJns378Q=s900-mo-c-c0xffffffff-rj-k-no" width='100%' alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Image Title 1</h5>
-                            <p class="card-text" id="descTravel1"><span id="fieldE">Some quick example text to build on the card title.</span></p>
-                            <p class="card-text" id="descTravel1"><span id="fieldF">Example text.</span></p>
+                            <h5 class="card-title" id="headTravel1">Image Title 1</h5>
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="col-sm-3">
-                    <div class="card" id="cardTravelImage2" style="width: 26rem;">
-                        <a href="#">
-                            <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card" id="cardTravelImage2" style="width: 100%">
+                        <a id='travelURL2' href="#">
+                            <img class="card-img-top" src="https://yt3.ggpht.com/a/AGF-l7_LHdOJn-5BQqXnt1LtUjUe4CMM6RBJns378Q=s900-mo-c-c0xffffffff-rj-k-no" width='100%' alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Image Title 2</h5>
-                            <p class="card-text" id="descTravel2"><span id="fieldE">Some quick example text to build on the card title.</span></p>
-                            <p class="card-text" id="descTravel2"><span id="fieldF">Example text.</span></p>
+                            <h5 class="card-title" id="headTravel2">Image Title 2</h5>
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="col-sm-3">
-                    <div class="card" id="cardTravelImage3" style="width: 26rem;">
+                    <div class="card" id="cardTravelImage3" style="width: 100%">
                         <a href="#">
-                            <img class="card-img-top" src="..." alt="Card image cap">
+                            <img class="card-img-top" src="https://yt3.ggpht.com/a/AGF-l7_LHdOJn-5BQqXnt1LtUjUe4CMM6RBJns378Q=s900-mo-c-c0xffffffff-rj-k-no" width="100%" alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Image Title 3</h5>
-                            <p class="card-text" id="descTravel3"><span id="fieldE">Some quick example text to build on the card title.</span></p>
-                            <p class="card-text" id="descTravel3"><span id="fieldF">Example text.</span></p>
+                            <h5 class="card-title" id="headTravel3">Image Title 3</h5>
                         </div>
                     </div>
                 </div>
@@ -174,13 +181,7 @@
 
             <!-- Weather section -->
             
-            <div class="col-sm-12" id="weatherForecast">
-                <h2>Weather Forecast for Your Area</h2>
-                <div>
-                            <!-- Add Weather Forecast and API data -->
-                </div>                      
-            </div>
-        </div>
+            
 
 
 
@@ -189,10 +190,10 @@
         <!-- Specific Firebase products link -->
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
         <!-- jQuery link -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <!-- Moment.js link -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <!--JavaScript -->
-        <script type="text/javascript" src="./assets/javascript/schedule-app.js"></script> 
+        <script type="text/javascript" src="./assets/javascript/trek.js"></script> 
     </body>
 </html>
