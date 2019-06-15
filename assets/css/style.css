@@ -56,3 +56,7 @@ h2 {
     margin-top: 40px;
     border: 1px solid #E5ECF4;
 }
+
+.card-body {
+    padding: 2%;
+}
