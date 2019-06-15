@@ -1,0 +1,63 @@
+
+body {
+    margin: 0;
+    background-color: #FFFFFF;
+}   
+
+nav {
+    text-align: center;
+    background-color: #7568FF;
+    color: whitesmoke;
+}
+
+.card {
+    background-color: #C3BEF7;
+}
+
+#navTagline {
+    font-size: 16px;
+}
+
+h3 {
+    color: #7568FF;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #7568FF;
+    text-align: center;
+}
+        
+.card {
+    background-color: #E5ECF4;
+}
+        
+.intro-text {
+    text-align: center
+}
+
+#searchSection {
+    background-color: #EFFFFA;
+}
+
+#searchButton {
+    background-color: #7568FF;
+    margin-left: 533px;
+    margin-bottom: 30px;
+}
+
+#sectionHeaders {
+    background-color: #FFFFFF;
+}
+
+#weatherForecast {
+    background-color: #C3BEF7;
+    margin-top: 40px;
+    border: 1px solid #E5ECF4;
+}
+
+.card-body {
+    padding: 2%;
+    text-align: center;
+}
