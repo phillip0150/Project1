@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Trek Wireframe</title>
+        <title>Trek - Simplify Your Life</title>
+        <link rel="shortcut icon" type="image/ico" href="./assets/images/favicon.ico"/>
 
-     
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -15,48 +15,49 @@
         <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
         <!-- Moment JS -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <!-- Google Fonts
-        <link href="https://fonts.googleapis.com/css?family=Jomhuria&display=swap" rel="stylesheet"> -->       
+        <!-- Google Fonts  -->
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Amaranth:700|BioRhyme|Changa+One|Noto+Serif|Playfair+Display|Sansita|Signika:400,700&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <script src="https://kit.fontawesome.com/84e2c4562c.js"></script> 
     </head>
 
     <body>
         <!-- Navbar with Trek logo -->
-        <nav class="navbar navbar-light bg-light">
-                
-                
-            <img src="./assets/images/logo1.png" alt="Trek logo placeholder art" width="200px" />       
-            <p id="navTagline">Simplify Your Travel</p>
-        
+        <nav class="navbar navbar-light bg-light" id="navMasthead">              
+            <img id="navLogo" src="./assets/images/logo1.png" alt="Trek logo placeholder art" width="150px" />       
+            <p id="navTagline">Simplify Your Travel</p>       
         </nav>
     
-        <div class="container">
+        <div id="search-weather">
             <!-- Search section -->
-            <div class="row" id="searchSection">
-                <div class="col-sm-12">
-                    <h3>Where are you going?</h3>
+            <div class="row">
+                <div class="col-sm-12" id="searchSection">
+                    <h1>Where would you like to go?</h1>
+                    <p id="searchPara">Enter a destination below and click the "Search" button.</p>
                     <form>
                         <div class="form-group">
-                            <!-- <label>Search</label> -->
-                            <input type="text" class="form-control" id="searchInput" placeholder="Enter a location name">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Enter a city name">
                         </div>
                     </form>
                     <button type="button" id="searchButton" class="btn btn-primary">Search</button>                      
                 </div>
             </div>
 
-            <!-- Weather -->
-        <div class="row" id="weatherForecast">
-            <div class="col-sm-12" id="weatherForecast">
-                    <h2 id="weatherHeader"></h2>
-                     <h3 id="tempText"></h3>     
+            <!-- Weather section -->
+            <div class="row" id="weatherForecast">
+                <div class="col-sm-12">
+                <h3 class="sectionRule" id="weatherHeader"></h3>
+                <h2 id="tempText"></h2>     
+                </div>
             </div>
         </div>
 
+        <div class="container">
             <!-- Events section -->
             <div class="row" id="eventsSection">    
                 <div class="col-sm-12" id="sectionHeaders">
-                    <h3>EVENTS</h3>
-                    <p class="intro-text">Check out the local events happening in your area.</p>      
+                    <h2><i class="fas fa-calendar-alt">&nbsp;</i>Events</h2>
+                    <p class="intro-text">Check out the local events happening at your destination.</p>      
                 </div>
                 <div class="col-sm-4">
                     <div class="card" id="cardEventImage0" style="width: 100%;">
@@ -68,11 +69,14 @@
                             <p class="card-text" id="descEvent0"></p>
                             <p class="card-text" id="freeEvent0"></p>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="eventButton0">
+                            Read More
+                        </button>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card" id="cardEventImage1" style="width: 100%">
-                        <a id="evengURL1" href="#">
+                        <a id="eventURL1" href="#">
                             <img class="card-img-top" id="eventImage1" src="" alt="Card image cap" style="width:100%; height:100%">
                         </a>
                         <div class="card-body">
@@ -80,6 +84,9 @@
                                 <p class="card-text" id="descEvent1"></p>
                                 <p class="card-text" id="freeEvent1"></p>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="eventButton1">
+                            Read More
+                        </button>
                     </div>           
                 </div>
                 <div class="col-sm-4">
@@ -92,15 +99,43 @@
                                 <p class="card-text" id="descEvent2"></p>
                                 <p class="card-text" id="freeEvent2"></p>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="eventButton2">
+                            Read More
+                        </button>
                     </div>                       
                 </div>
             </div>
-                    
+
+            
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Read more about it . . .</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
             <!-- Food section -->
             <div class="row" id="foodSection">    
                 <div class="col-sm-12" id="sectionHeaders">
-                    <h3>FOOD</h3>
-                    <p class="intro-text">Try some of the local flavors in your area.</p>      
+                    <h2><i class="fas fa-utensils">&nbsp;</i>Food</h2>
+                    <p class="intro-text">Try some of the local flavors at your destination.</p>      
                 </div>
                 <div class="col-sm-6">
                     <div class="card"  style="width: 100%">
@@ -112,6 +147,9 @@
                             <p class="card-text" id="foodPrice0"></p>
                             <p class="card-text" id="foodRating0"></p>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="foodButton0">
+                            Read More
+                        </button>
                     </div>        
                 </div>
                 <div class="col-sm-6">
@@ -124,6 +162,9 @@
                             <p class="card-text" id="foodPrice1"></p>
                             <p class="card-text" id="foodRating1"></p>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="foodButton1">
+                            Read More
+                        </button>
                     </div>        
                 </div>
             </div>
@@ -131,8 +172,8 @@
             <!-- Travel section -->
             <div class="row" id="travelSection">    
                 <div class="col-sm-12" id="sectionHeaders">
-                    <h3>TRAVEL NEWS</h3>
-                    <p class="intro-text">Here are some current New York Times Travel Articles:</p>      
+                    <h2><i class="fas fa-map-marked-alt">&nbsp;</i>Travel News</h2>
+                    <p class="intro-text">Here are some <em>New York Times</em> travel articles:</p>      
                 </div>
                 <div class="col-sm-3">
                     <div class="card" id="cardTravelImage0" style="width: 100%">
@@ -142,9 +183,11 @@
                         <div class="card-body">
                             <h5 class="card-title" id="headTravel0">Image Title 0</h5>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="travelButton0">
+                            Read More
+                        </button>
                     </div>
                 </div>
-                <br>
                 <div class="col-sm-3">
                     <div class="card" id="cardTravelImage1" style="width: 100%">
                         <a id='travelURL1' href="#">
@@ -153,9 +196,11 @@
                         <div class="card-body">
                             <h5 class="card-title" id="headTravel1">Image Title 1</h5>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="travelButton1">
+                            Read More
+                        </button>
                     </div>
                 </div>
-                <br>
                 <div class="col-sm-3">
                     <div class="card" id="cardTravelImage2" style="width: 100%">
                         <a id='travelURL2' href="#">
@@ -164,9 +209,11 @@
                         <div class="card-body">
                             <h5 class="card-title" id="headTravel2">Image Title 2</h5>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="travelButton2">
+                            Read More
+                        </button>
                     </div>
                 </div>
-                <br>
                 <div class="col-sm-3">
                     <div class="card" id="cardTravelImage3" style="width: 100%">
                         <a href="#">
@@ -175,16 +222,14 @@
                         <div class="card-body">
                             <h5 class="card-title" id="headTravel3">Image Title 3</h5>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="travelButton3">
+                            Read More
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <!-- Weather section -->
+        </div>
             
-            
-
-
-
         <!-- Firebase Core JavaScript link -->
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
         <!-- Specific Firebase products link -->
@@ -193,7 +238,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <!-- Moment.js link -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <!--JavaScript -->
-        <script type="text/javascript" src="./assets/javascript/trek.js"></script> 
+        <!-- JavaScript -->
+        <script type="text/javascript" src="./assets/javascript/trek.js"></script>
     </body>
 </html>
