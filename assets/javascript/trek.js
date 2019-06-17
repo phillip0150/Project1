@@ -112,7 +112,7 @@ $("button").on("click", function() {
     //next we want to set a query's
     queryWeather = "https://api.openweathermap.org/data/2.5/weather?q="+userInput+",US&appid=e921e4ee26a025090f4ff9b62f27ad89";
     // querySky = "Whatever the url is"+userInput+"api key";
-    queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=column:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
+    queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=headline:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
     queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&limit=2";
     queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=3";
     //next we are going to call our api's
