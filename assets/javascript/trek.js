@@ -59,8 +59,8 @@ function updateYelpFood(yelpData){
         $("#cardFoodImage"+i).attr("src", picture);
         $("#cardFoodLink"+i).attr("href", yelpLink);
         $("#cardFoodTitle"+i).text(name);
-        $("#foodPrice"+i).html("Price: " + price);
-        $("#foodRating"+i).html("Food Rating: " + rating);
+        $("#foodPrice"+i).text("Price: " + price);
+        $("#foodRating"+i).text("Food Rating: " + rating);
         }
     
     $("#foodSection").show();
@@ -102,7 +102,7 @@ function updateYelpEvent(yelpEvent){
 
 
 //When a button is clicked, we want to grab that value and use that value to search our apis
-$("button").on("click", function() {
+$("#searchButton").on("click", function() {
     console.log("in button click");
     //we want to get the users input
     //we do that by getting the id of the input and then the val
