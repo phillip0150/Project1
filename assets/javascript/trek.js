@@ -39,6 +39,8 @@ function updateNYT(nytData){
         var article = nytData.response.docs;
         $("#travelURL"+i).attr("href", nytData.response.docs[i].web_url);
         $("#headTravel"+i).text(nytData.response.docs[i].headline.main);
+        $("#nytButton"+i).attr("href", nytData.response.docs[i].web_url);
+        $("#nytButton"+i).attr("target", "_blank");
 
     }
 
@@ -72,7 +74,6 @@ function updateYelpEvent(yelpEvent){
     console.log("In yelp event");
     console.log(yelpEvent);
 
-        
             for(var j=0; j<yelpEvent.events.length; j++){
             console.log("in for loop");
             //  set rt as response.businesses
@@ -88,6 +89,8 @@ function updateYelpEvent(yelpEvent){
             $("#eventTitle"+j).text(nameEvent);
             $("#descEvent"+j).text(description);
             $("#freeEvent"+j).text("Is the event free? " +free);
+            $("#eventButton"+j).attr("href", eventUrl);
+            $("#eventButton"+j).attr("target", "_blank");
 
 
             console.log(nameEvent);
@@ -110,13 +113,14 @@ $("#searchButton").on("click", function() {
     //we do that by getting the id of the input and then the val
     userInput = $("#searchInput").val().trim();
     console.log(userInput);
-
+    var nowInMillisconds = parseInt(moment().format('x'));
+    var nowInSeconds = Math.floor(nowInMillisconds/1000);
     //next we want to set a query's
     queryWeather = "https://api.openweathermap.org/data/2.5/weather?q="+userInput+",US&appid=e921e4ee26a025090f4ff9b62f27ad89";
     // querySky = "Whatever the url is"+userInput+"api key";
     queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=headline:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
-    queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&limit=2";
-    queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=3";
+    queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&limit=3";
+    queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=3&start_date="+nowInSeconds+"&sort_on=time_start&sort_by=asc";
     //next we are going to call our api's
     //using a ajax call, we call our url and methond
     //when we get a response, we update each section;
