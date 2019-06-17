@@ -8,10 +8,6 @@ p {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 18px;
 }
-    /*.container {
-        border: 3px solid #7568FF;
-    } */
-
 
 /* MASTHEAD (Nav area) */
 nav {
@@ -72,7 +68,7 @@ h1 {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 18px;
     width: 65%;
-    margin-left: 300px;
+    margin-left: 18%;
     margin-top: 20px;
     font-style: bold;
     border: 1.5px solid #7568FF;
@@ -215,33 +211,6 @@ img {
     color: chartreuse;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 }
-
-
-/* FONT FAMILIES [--> remove when all fonts are approved <--]
-font-family: 'Changa One', cursive;
-font-family: 'Playfair Display', serif;
-font-family: 'Noto Serif', serif;
-font-family: 'BioRhyme', serif;
-font-family: 'Signika', sans-serif;
-font-family: 'Amaranth', sans-serif;
-    font-family: 'Alegreya Sans', sans-serif;
-font-family: 'Sansita', sans-serif;
-
-
-
-font-family: 'Changa One', cursive;
-    font-family: 'Playfair Display', serif;
-font-family: 'Noto Serif', serif;
-    font-family: 'BioRhyme', serif;
-       font-family: 'Signika', sans-serif;
-        font-family: 'Amaranth', sans-serif;
-
-font-family: 'Lobster', cursive;
-font-family: 'Maiden Orange', cursive;
-font-family: 'Changa One', cursive;
-font-family: 'Righteous', cursive;
-*/
-
 
 /*
     Colorbox Core Style:
