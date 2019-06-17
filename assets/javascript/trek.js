@@ -85,7 +85,6 @@ function updateYelpEvent(yelpEvent){
             var eventUrl = rt.event_site_url;
             var imageEvent = rt.image_url;
             $("#eventImage"+j).attr("src", imageEvent);
-            $("#eventURL"+j).attr("href", eventUrl);
             $("#eventTitle"+j).text(nameEvent);
             $("#descEvent"+j).text(description);
             $("#freeEvent"+j).text("Is the event free? " +free);
@@ -119,8 +118,8 @@ $("#searchButton").on("click", function() {
     queryWeather = "https://api.openweathermap.org/data/2.5/weather?q="+userInput+",US&appid=e921e4ee26a025090f4ff9b62f27ad89";
     // querySky = "Whatever the url is"+userInput+"api key";
     queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=headline:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
-    queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&limit=3";
-    queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=3&start_date="+nowInSeconds+"&sort_on=time_start&sort_by=asc";
+    queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&limit=10";
+    queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=9&start_date="+nowInSeconds+"&sort_on=time_start&sort_by=asc";
     //next we are going to call our api's
     //using a ajax call, we call our url and methond
     //when we get a response, we update each section;

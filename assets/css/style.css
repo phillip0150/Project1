@@ -1,7 +1,8 @@
 /* BODY */
-body {
+body, html {
     margin: 0;
     background-color: #EFFFFA;
+    height: 100%;
 }   
 .row {
     margin-left: 0;
@@ -124,7 +125,7 @@ h3 {
 .sectionRule {
     height: 27px;
     background-color: #C3BEF7;
-    color: ##EFFFFA;
+    color: #EFFFFA;
 }
 
 #tempText {
@@ -176,9 +177,10 @@ img {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
-    width: 40%;
-    margin-top: 5px;
-    margin-bottom: 25px;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 5px; */
+    /* margin-bottom: 25px; */
 }
 
     /* On card mouse-over, add a deeper shadow */
@@ -189,14 +191,37 @@ img {
 .card-body {
     padding: 2%;
     text-align: center;
+    width: 100%;
+    height: 50%;
+    
 }
+
+.card-img-top{
+    width: 50%;
+    /* height: 25%; */
+}
+
 
 .card-text {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 16px;
-    text-align: left;
+    text-align: center;
     line-height: 1.5em;
     font-weight: normal;
+}
+
+
+li{
+    background-color: black !important; 
+}
+
+
+
+
+
+.carousel-control-next, .carousel-control-prev{
+    background-color: rgba(124, 124, 124, 0.37);
+    width: 5%;
 }
 
 .btn-secondary {
@@ -207,7 +232,7 @@ img {
     margin-bottom: 15px;
     border: 1px solid #E5ECF4;
     color: #EFFFFA;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
 
 .btn-secondary:hover {
@@ -285,3 +310,4 @@ img {
     text-align: center;
     padding-top: 5px;
 }
+
