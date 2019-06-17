@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ee1679dbc5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+</head>
+<body>
+    <script>
+        var city = "miami"
+        var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+city+"&categories=museums&limit=10";
+        //query restauran data yelp
+        $.ajax({
+           url: myurl,
+           headers: {
+            'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
+           },
+           method:"GET",
+        }).then(function(response) {
+            console.log(response);
+            //console data from yelp
+            console.log(response.businesses[0].name);
+            console.log(response.businesses[0].price);
+
+            console.log(response.businesses[0].url);
+            console.log(response.businesses[0].image_url);
+
+            for(var i=0; i<response.businesses.length ; i++){
+            //set rb as response.businesses
+            var rb = response.businesses[i];
+            //set variables from the API to the variables
+            var name = rb.name;
+            var price = rb.price;
+            var rating = rb.rating; 
+            var yelpLink = rb.url;
+            var picture = rb.imageurl;
+
+            console.log(name);
+            console.log(price);
+            console.log(rating);
+            console.log(yelpLink);
+
+
+
+            }
+
+            
+        
+         });
+
+
+         
+      
+       
+
+     </script>
+
+</body>
+</html>
