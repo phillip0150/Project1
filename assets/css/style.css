@@ -3,6 +3,11 @@ body {
     margin: 0;
     background-color: #EFFFFA;
 }   
+.row {
+    margin-left: 0;
+    margin-right: 0;
+
+}
 
 p {
     font-family: 'Alegreya Sans', sans-serif;
@@ -31,7 +36,6 @@ nav {
 
 #navMasthead,
 #search-weather {
-    padding: -1px;
     margin: 0;
 }
 
@@ -91,7 +95,6 @@ h1 {
     /* Code to bottom and top align two sections and reduce white space between them */
 #searchSection,
 #weatherForecast {
-    padding: 0px;
     margin: 0;
 }
 
@@ -270,3 +273,15 @@ img {
         .cboxSlideshow_on #cboxSlideshow:hover{background-position:-150px 0px;}
         .cboxSlideshow_off #cboxSlideshow{background-position:-150px -25px; right:27px;}
         .cboxSlideshow_off #cboxSlideshow:hover{background-position:-125px 0px;}
+
+       
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #7568FF;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+}
