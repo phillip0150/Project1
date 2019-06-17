@@ -61,6 +61,8 @@ function updateYelpFood(yelpData){
         $("#cardFoodTitle"+i).text(name);
         $("#foodPrice"+i).text("Price: " + price);
         $("#foodRating"+i).text("Food Rating: " + rating);
+        $("#foodButton"+i).attr("href", yelpLink);
+        $("#foodButton"+i).colorbox({iframe:true, width:"80%", height:"80%"});
         }
     
     $("#foodSection").show();
