@@ -6,12 +6,15 @@ var queryNYT;
 var querySky;
 var queryWeather;
 
-//first hiding divs
+
+    //first hiding divs
 //when we click on the submit button and get a result, we will show divs
 $("#eventsSection").hide();
 $("#foodSection").hide();
 $("#travelSection").hide();
 $("#weatherForecast").hide();
+$("#museumSection").hide();
+
 
 //a function to update weather
 //if we get a response from the data base, we call this function
@@ -19,7 +22,6 @@ function updateWeather(weatherData){
     var weatherTemp = ((weatherData.main.temp-273.15)* 1.80 + 32);
     var weatherSky = weatherData.weather[0].main;
     var weatherIcon = weatherData.weather[0].icon;
-    console.log(weatherSky);
     $("#weatherHeader").text("Weather Forecast for " +userInput);
     $("#tempText").text(Math.round(weatherTemp)+ " ºF ");
     $("#tempText").append("<img src=https://openweathermap.org/img/w/"+weatherIcon+".png>");
@@ -62,7 +64,7 @@ function updateYelpFood(yelpData){
         $("#cardFoodLink"+i).attr("href", yelpLink);
         $("#cardFoodTitle"+i).text(name);
         $("#foodPrice"+i).text("Price: " + price);
-        $("#foodRating"+i).text("Food Rating: " + rating);
+        $("#foodRating"+i).text("Rating: " + rating +" Stars");
         $("#foodButton"+i).attr("href", yelpLink);
         $("#foodButton"+i).colorbox({iframe:true, width:"80%", height:"80%"});
         }
@@ -71,11 +73,9 @@ function updateYelpFood(yelpData){
 }
 
 function updateYelpEvent(yelpEvent){
-    console.log("In yelp event");
-    console.log(yelpEvent);
+
 
             for(var j=0; j<yelpEvent.events.length; j++){
-            console.log("in for loop");
             //  set rt as response.businesses
             var rt = yelpEvent.events[j];
             //set variables from the API to the variables
@@ -87,19 +87,49 @@ function updateYelpEvent(yelpEvent){
             $("#eventImage"+j).attr("src", imageEvent);
             $("#eventTitle"+j).text(nameEvent);
             $("#descEvent"+j).text(description);
-            $("#freeEvent"+j).text("Is the event free? " +free);
+            if(free === true){
+                $("#freeEvent"+j).text("The event is free!");
+            }
+            else{
+                $("#freeEvent"+j).text("Sorry, this event is not free.");
+            }
             $("#eventButton"+j).attr("href", eventUrl);
             $("#eventButton"+j).attr("target", "_blank");
 
 
-            console.log(nameEvent);
-            console.log(description);
-            console.log(free);
-            console.log(eventUrl);
+          
             }
 
             $("#eventsSection").show();
-            console.log("show event section");
+           
+        }
+
+
+function updateYelpPlaces(yelpPlaces){
+   
+            for(var j=0; j<yelpPlaces.businesses.length; j++){
+            //  set rt as response.businesses
+            var place = yelpPlaces.businesses[j];
+            //set variables from the API to the variables
+            var namePlace = place.name;
+            var closedPlace = place.is_closed;
+            var ratingPlace = place.rating;
+            var linkPlace = place.url;
+            var imagePlace = place.image_url;
+            $("#museumImage"+j).attr("src", imagePlace);
+            $("#museumTitle"+j).text(namePlace);
+            if(closedPlace === false){
+                $("#museumPrice"+j).text("Sorry, the museum is closed");
+            }
+            else{
+                $("#museumPrice"+j).text("Yay! the museum is open!");
+            }
+            $("#museumRating"+j).text("Rating: "+ratingPlace +" Stars");
+            $("#museumButton"+j).attr("href", linkPlace);
+            $("#museumButton"+j).attr("target", "_blank");
+            }
+
+            $("#museumSection").show();
         }
 
 
@@ -107,7 +137,7 @@ function updateYelpEvent(yelpEvent){
 
 //When a button is clicked, we want to grab that value and use that value to search our apis
 $("#searchButton").on("click", function() {
-    console.log("in button click");
+    
     //we want to get the users input
     //we do that by getting the id of the input and then the val
     userInput = $("#searchInput").val().trim();
@@ -120,6 +150,8 @@ $("#searchButton").on("click", function() {
     queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=headline:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
     queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&limit=10";
     queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=9&start_date="+nowInSeconds+"&sort_on=time_start&sort_by=asc";
+    queryYelpPlaces = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&categories=museums&limit=10";
+    
     //next we are going to call our api's
     //using a ajax call, we call our url and methond
     //when we get a response, we update each section;
@@ -154,4 +186,13 @@ $("#searchButton").on("click", function() {
            },
         method: "GET"
     }).then(updateYelpEvent);
+
+    $.ajax({
+        url: queryYelpPlaces,
+        headers: {
+            'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
+           },
+        method: "GET"
+    }).then(updateYelpPlaces);
 });
+

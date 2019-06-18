@@ -1,5 +1,5 @@
 /* BODY */
-body, html {
+body{
     margin: 0;
     background-color: #EFFFFA;
     height: 100%;
@@ -22,6 +22,9 @@ nav {
     background-color: #7568FF;
     color: whitesmoke;
 }
+
+
+
 
 #navLogo {
     padding-top: 6px;
