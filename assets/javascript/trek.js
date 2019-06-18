@@ -14,6 +14,7 @@ $("#foodSection").hide();
 $("#travelSection").hide();
 $("#weatherForecast").hide();
 $("#museumSection").hide();
+$(".container").hide();
 
 
 var placesAutocomplete = places({
@@ -32,6 +33,7 @@ function updateWeather(weatherData){
     $("#weatherHeader").text("Weather Forecast for " +userInput);
     $("#tempText").text(Math.round(weatherTemp)+ " ºF ");
     $("#tempText").append("<img src=https://openweathermap.org/img/w/"+weatherIcon+".png>");
+    $(".container").show();
     $("#weatherForecast").show();
 }
 
@@ -52,7 +54,7 @@ function updateNYT(nytData){
         $("#nytButton"+i).attr("target", "_blank");
 
     }
-
+    $(".container").show();
     $("#travelSection").show();
 }
 
@@ -75,7 +77,9 @@ function updateYelpFood(yelpData){
         $("#foodButton"+i).attr("href", yelpLink);
         $("#foodButton"+i).colorbox({iframe:true, width:"80%", height:"80%"});
         }
-    
+
+    $(".container").show();
+
     $("#foodSection").show();
 }
 
@@ -106,7 +110,7 @@ function updateYelpEvent(yelpEvent){
 
           
             }
-
+            $(".container").show();
             $("#eventsSection").show();
            
         }
@@ -135,7 +139,7 @@ function updateYelpPlaces(yelpPlaces){
             $("#museumButton"+j).attr("href", linkPlace);
             $("#museumButton"+j).attr("target", "_blank");
             }
-
+            $(".container").show();
             $("#museumSection").show();
         }
 
@@ -144,7 +148,8 @@ function updateYelpPlaces(yelpPlaces){
 
 //When a button is clicked, we want to grab that value and use that value to search our apis
 $("#searchButton").on("click", function() {
-    
+    //setting position back
+    $("#searchSection").attr("style", " ");
     // Velocity JS Animation for logo
     $("#navLogo, #navTagline").velocity("fadeIn", { duration: 1500 });
     // End animation for logo
