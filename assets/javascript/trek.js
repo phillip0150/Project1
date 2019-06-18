@@ -141,7 +141,6 @@ $("#searchButton").on("click", function() {
     //we want to get the users input
     //we do that by getting the id of the input and then the val
     userInput = $("#searchInput").val().trim();
-    console.log(userInput);
     var nowInMillisconds = parseInt(moment().format('x'));
     var nowInSeconds = Math.floor(nowInMillisconds/1000);
     //next we want to set a query's
