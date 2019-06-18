@@ -17,6 +17,8 @@ $("#museumSection").hide();
 $(".container").hide();
 
 
+
+
 var placesAutocomplete = places({
     appId: 'plX4APBGR5XG',
     apiKey: 'a0250e396f720f7da8e49b95796ec378',
