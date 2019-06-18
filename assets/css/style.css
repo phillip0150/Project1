@@ -58,9 +58,9 @@ h1 {
 
 #searchSection {
     text-align: center;
-    background-image: url("../images/sean-o-406693-unsplash.jpg"); 
+    /* background-image: url("../images/sean-o-406693-unsplash.jpg");  */
 /*   background-image: url("../images/casey-horner-370520-unsplash.jpg"); */
-/*    background-image: url("../images/scott-osborn-1615057-unsplash.jpg"); */
+   background-image: url("../images/scott-osborn-1615057-unsplash.jpg");
     /*    background-image: url("../images/alex-collins-1605474-unsplash.jpg"); */
     /*    background-image: url("../images/john-matychuk-284377-unsplash.jpg"); */
     background-size: cover;
@@ -78,12 +78,14 @@ h1 {
 #searchInput {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 18px;
-    width: 65%;
-    margin-left: 18%;
-    margin-top: 20px;
+    /* width: 65%; */
+    /* margin-left: 18%;
+    margin-top: 20px; */
+    text-align: center;
     font-style: bold;
     border: 1.5px solid #7568FF;
     color: #7568FF;
+    max-width: none;
 }
 
 #searchButton {
