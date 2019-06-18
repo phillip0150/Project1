@@ -1,5 +1,5 @@
 /* BODY */
-body{
+body, html{
     margin: 0;
     background-color: #EFFFFA;
     height: 100%;
@@ -58,14 +58,16 @@ h1 {
 
 #searchSection {
     text-align: center;
-    background-image: url("../images/sean-o-406693-unsplash.jpg"); 
+    /* background-image: url("../images/sean-o-406693-unsplash.jpg");  */
 /*   background-image: url("../images/casey-horner-370520-unsplash.jpg"); */
-/*    background-image: url("../images/scott-osborn-1615057-unsplash.jpg"); */
+   background-image: url("../images/scott-osborn-1615057-unsplash.jpg");
     /*    background-image: url("../images/alex-collins-1605474-unsplash.jpg"); */
     /*    background-image: url("../images/john-matychuk-284377-unsplash.jpg"); */
     background-size: cover;
-    height: 400px;
+    /* height: 400px; */
 }
+
+
 
 #searchPara {
     font-family: 'Signika', sans-serif;
@@ -78,32 +80,35 @@ h1 {
 #searchInput {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 18px;
-    width: 65%;
-    margin-left: 18%;
-    margin-top: 20px;
+    /* width: 65%; */
+    /* margin-left: 18%;
+    margin-top: 20px; */
+    text-align: center;
     font-style: bold;
     border: 1.5px solid #7568FF;
     color: #7568FF;
+    max-width: none;
 }
 
 #searchButton {
     background-color: #7568FF;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 20px;
-    margin-top: 30px;
-    margin-bottom: 25px;
     border: 1px solid #E5ECF4;
+    margin-bottom: 5%;
 }
 
 #searchButton:hover {
     color: chartreuse;
 }
 
-    /* Code to bottom and top align two sections and reduce white space between them */
+    /* Code to bottom and top align two sections and reduce white space between them
 #searchSection,
 #weatherForecast {
     margin: 0;
-}
+    width:100%;
+    height: 100%;
+} */
 
 
 /* WEATHER section rule for head */
@@ -139,7 +144,8 @@ h3 {
     font-size: 32px;
     color: black;
     text-align: center;
-    margin-top: 10px;  
+    /* padding: 5%; */
+    /* margin-top: 10px;   */
 }
 
 

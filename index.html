@@ -18,20 +18,21 @@
 
     <body>
         <!-- Navbar with Trek logo -->
-        <nav class="navbar navbar-light bg-light" id="navMasthead">              
-            <img id="navLogo" src="./assets/images/logo1.png" alt="Trek logo placeholder art" width="150px" />       
-            <p id="navTagline">Simplify Your Travel</p>       
+        <nav class="navbar" id="navMasthead">              
+            <p id="navTagline" class="rounded mx-auto d-block"><img id="navLogo" src="./assets/images/logo1.png" alt="Trek logo placeholder art" width="150px"><br>Simplify Your Travel</p>       
         </nav>
 
+
+        
         <div id="search-weather">
             <!-- Search section -->
             <div class="row">
-                <div class="col-sm-12" id="searchSection">
+                <div class="col-sm-12" id="searchSection" style="position: absolute; height: 75%;">
                     <h1>Where would you like to go?</h1>
                     <p id="searchPara">Enter a destination below and click the "Search" button.</p>
                     <form>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="searchInput" placeholder="Where are we going?">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Enter Location">
                         </div>
                     </form>
                     <button type="button" id="searchButton" class="btn btn-primary">Search</button>                      
@@ -39,15 +40,16 @@
             </div>
 
             <!-- Weather section -->
-            <div class="row" id="weatherForecast">
+            <div class="row" id="weatherForecast" style="display:none">
                 <div class="col-sm-12">
                 <h3 class="sectionRule" id="weatherHeader"></h3>
+                <br>
                 <h2 id="tempText"></h2>     
                 </div>
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" style="display:none">
             
             <!-- Events section -->
             <div class="row" id="eventsSection">    
