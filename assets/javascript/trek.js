@@ -16,6 +16,13 @@ $("#weatherForecast").hide();
 $("#museumSection").hide();
 
 
+var placesAutocomplete = places({
+    appId: 'plX4APBGR5XG',
+    apiKey: 'a0250e396f720f7da8e49b95796ec378',
+    container: document.querySelector('#searchInput')
+  });
+
+
 //a function to update weather
 //if we get a response from the data base, we call this function
 function updateWeather(weatherData){
