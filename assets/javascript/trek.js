@@ -145,6 +145,10 @@ function updateYelpPlaces(yelpPlaces){
 //When a button is clicked, we want to grab that value and use that value to search our apis
 $("#searchButton").on("click", function() {
     
+    // Velocity JS Animation for logo
+    $("#navLogo, #navTagline").velocity("fadeIn", { duration: 1500 });
+    // End animation for logo
+    
     //we want to get the users input
     //we do that by getting the id of the input and then the val
     userInput = $("#searchInput").val().trim();
