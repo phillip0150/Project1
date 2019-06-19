@@ -91,6 +91,7 @@ function updateYelpFood(yelpData){
 
 function updateYelpEvent(yelpEvent){
 
+            console.log(yelpEvent);
 
             for(var j=0; j<yelpEvent.events.length; j++){
             //  set rt as response.businesses
@@ -116,8 +117,14 @@ function updateYelpEvent(yelpEvent){
 
           
             }
+            if(yelpEvent.evnts.length ===0){
+                $(".container").show();
+                $("#eventsSection").hide();
+            }
+            else{
             $(".container").show();
             $("#eventsSection").show();
+            }
            
         }
 
@@ -135,11 +142,12 @@ function updateYelpPlaces(yelpPlaces){
             var imagePlace = place.image_url;
             $("#museumImage"+j).attr("src", imagePlace);
             $("#museumTitle"+j).text(namePlace);
+            console.log(closedPlace);
             if(closedPlace === false){
-                $("#museumPrice"+j).text("Sorry, the museum is closed");
+                $("#museumPrice"+j).text("Yay! the museum is open!");
             }
             else{
-                $("#museumPrice"+j).text("Yay! the museum is open!");
+                $("#museumPrice"+j).text("Sorry, the museum is closed");
             }
             $("#museumRating"+j).text("Rating: "+ratingPlace +" Stars");
             $("#museumButton"+j).attr("href", linkPlace);

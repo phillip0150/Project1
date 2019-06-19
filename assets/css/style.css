@@ -231,7 +231,9 @@ li{
 }
 
 
-
+a {
+    text-align: center;
+}
 
 
 .carousel-control-next, .carousel-control-prev{
@@ -247,7 +249,8 @@ li{
     margin-bottom: 15px;
     border: 1px solid #E5ECF4;
     color: #EFFFFA;
-    /* margin-left: 30px; */
+    vertical-align: center;
+    
 }
 
 .btn-secondary:hover {
