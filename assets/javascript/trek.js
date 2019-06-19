@@ -91,7 +91,6 @@ function updateYelpFood(yelpData){
 
 function updateYelpEvent(yelpEvent){
 
-            console.log(yelpEvent);
 
             for(var j=0; j<yelpEvent.events.length; j++){
             //  set rt as response.businesses
@@ -142,7 +141,6 @@ function updateYelpPlaces(yelpPlaces){
             var imagePlace = place.image_url;
             $("#museumImage"+j).attr("src", imagePlace);
             $("#museumTitle"+j).text(namePlace);
-            console.log(closedPlace);
             if(closedPlace === false){
                 $("#museumPrice"+j).text("Yay! the museum is open!");
             }
