@@ -30,8 +30,8 @@ App Specifications
 
 Frameworks and Technologies—
 
-- ** GitHub** – Used for version controlFor
-- ** Frameworks and Programming Languages**
+- **GitHub** – Used for version control
+- **Frameworks and Programming Languages**
   - **HTML (Bootstrap 4.3.1)** – Used for mobile responsiveness and additional components including carousel, navigation, footer
   - **CSS** – Used for styling, look and feel of the app
   - **JavaScript and jQuery** – Used for logo animation (fade) on click event, carousel action, api integration
