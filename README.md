@@ -112,4 +112,5 @@ Future iterations of this application will include the following enhancements:
 - Additional sections [to be determined]
 
 Team 8 members: Phillip Valdez, Jaime Rodriguez, Manuel Velasquez, Juan Baquera
+<br>
 <a href="https://docs.google.com/presentation/d/15hMUUJxwiwvw3_vBiO0LGM2PVdHBYXtoXb9e5M4dtDo/edit#slide=id.g5c0c533828_3_6">Team 8 Slides</a>
