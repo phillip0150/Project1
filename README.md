@@ -35,10 +35,10 @@ Frameworks and Technologies—
   - **HTML (Bootstrap 4.3.1)** – Used for mobile responsiveness and additional components including carousel, navigation, footer
   - **CSS** – Used for styling, look and feel of the app
   - **JavaScript and jQuery** – Used for logo animation (fade) on click event, carousel action, api integration
-- ** Google Fonts and Font Awesome** – Used for font families and section header iconography
-- ** Coolors.com** – Used for site color scheme
-- ** Wix.com** – Used for logo creation
-- ** Javascript libraries**
+- **Google Fonts and Font Awesome** – Used for font families and section header iconography
+- **Coolors.com** – Used for site color scheme
+- **Wix.com** – Used for logo creation
+- **Javascript libraries**
   - Velocity js – Used for logo animation
   - Colorbox – Used with each result card display. allows for users to click a button within a card and open the search result URL within a modal
   - Moment js – Used to retrieve data based on current time. This is important functionality as we wanted to present the user with timely events, restaurants, museum events, and travel news.
