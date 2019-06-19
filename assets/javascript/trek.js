@@ -116,8 +116,14 @@ function updateYelpEvent(yelpEvent){
 
           
             }
+            if(yelpEvent.evnts.length ===0){
+                $(".container").show();
+                $("#eventsSection").hide();
+            }
+            else{
             $(".container").show();
             $("#eventsSection").show();
+            }
            
         }
 
@@ -136,10 +142,10 @@ function updateYelpPlaces(yelpPlaces){
             $("#museumImage"+j).attr("src", imagePlace);
             $("#museumTitle"+j).text(namePlace);
             if(closedPlace === false){
-                $("#museumPrice"+j).text("Sorry, the museum is closed");
+                $("#museumPrice"+j).text("Yay! the museum is open!");
             }
             else{
-                $("#museumPrice"+j).text("Yay! the museum is open!");
+                $("#museumPrice"+j).text("Sorry, the museum is closed");
             }
             $("#museumRating"+j).text("Rating: "+ratingPlace +" Stars");
             $("#museumButton"+j).attr("href", linkPlace);
