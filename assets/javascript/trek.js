@@ -84,9 +84,15 @@ function updateYelpFood(yelpData){
         $("#foodButton"+i).colorbox({iframe:true, width:"80%", height:"80%"});
         }
 
-    $(".container").show();
-
-    $("#foodSection").show();
+        if(yelpData.businesses.length ===0){
+            $(".container").show();
+            $("#foodSection").hide();
+        }
+        else{
+        $(".container").show();
+        $("#foodSection").show();
+        }
+   
 }
 
 function updateYelpEvent(yelpEvent){
@@ -116,7 +122,7 @@ function updateYelpEvent(yelpEvent){
 
           
             }
-            if(yelpEvent.evnts.length ===0){
+            if(yelpEvent.events.length ===0){
                 $(".container").show();
                 $("#eventsSection").hide();
             }
@@ -151,8 +157,16 @@ function updateYelpPlaces(yelpPlaces){
             $("#museumButton"+j).attr("href", linkPlace);
             $("#museumButton"+j).attr("target", "_blank");
             }
+
+            if(yelpPlaces.businesses.length ===0){
+                $(".container").show();
+                $("#museumSection").hide();
+            }
+            else{
             $(".container").show();
             $("#museumSection").show();
+            }
+            
         }
 
 
@@ -175,7 +189,7 @@ $("#searchButton").on("click", function() {
     queryWeather = "https://api.openweathermap.org/data/2.5/weather?q="+userInput+",US&appid=e921e4ee26a025090f4ff9b62f27ad89";
     // querySky = "Whatever the url is"+userInput+"api key";
     queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=headline:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
-    queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&limit=10";
+    queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&categories=food&limit=10";
     queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=9&start_date="+nowInSeconds+"&sort_on=time_start&sort_by=asc";
     queryYelpPlaces = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&categories=museums&limit=10";
     
