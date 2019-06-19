@@ -174,66 +174,74 @@ function updateYelpPlaces(yelpPlaces){
 
 //When a button is clicked, we want to grab that value and use that value to search our apis
 $("#searchButton").on("click", function() {
-    //setting position back
-    $("#searchSection").attr("style", " ");
-    // Velocity JS Animation for logo
-    $("#navLogo, #navTagline").velocity("fadeIn", { duration: 1500 });
-    // End animation for logo
+    $("#error").hide();
     
     //we want to get the users input
     //we do that by getting the id of the input and then the val
     userInput = $("#searchInput").val().trim();
-    var nowInMillisconds = parseInt(moment().format('x'));
-    var nowInSeconds = Math.floor(nowInMillisconds/1000);
-    //next we want to set a query's
-    queryWeather = "https://api.openweathermap.org/data/2.5/weather?q="+userInput+",US&appid=e921e4ee26a025090f4ff9b62f27ad89";
-    // querySky = "Whatever the url is"+userInput+"api key";
-    queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=headline:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
-    queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&categories=food&limit=10";
-    queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=9&start_date="+nowInSeconds+"&sort_on=time_start&sort_by=asc";
-    queryYelpPlaces = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&categories=museums&limit=10";
+    if(userInput === ""){
+        $("#error").show();
+    }
+    else {
+        //setting position back
+        $("#searchSection").attr("style", " ");
+        // Velocity JS Animation for logo
+        $("#navLogo, #navTagline").velocity("fadeIn", { duration: 1500 });
+        // End animation for logo
     
-    //next we are going to call our api's
-    //using a ajax call, we call our url and methond
-    //when we get a response, we update each section;
-    $.ajax({
-        url: queryWeather,
-        method: "GET"
-    }).then(updateWeather);
+        var nowInMillisconds = parseInt(moment().format('x'));
+        var nowInSeconds = Math.floor(nowInMillisconds/1000);
+        //next we want to set a query's
+        queryWeather = "https://api.openweathermap.org/data/2.5/weather?q="+userInput+",US&appid=e921e4ee26a025090f4ff9b62f27ad89";
+        // querySky = "Whatever the url is"+userInput+"api key";
+        queryNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+userInput+"&fq=headline:(36 hours "+userInput+")&fq=section_name:(Travel)&api-key=vMdLSfd0YAZw8KWXtnoXqszuA5lKGB1T";
+        queryYelpFood= "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&categories=food&limit=10";
+        queryYelpEvents = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?location="+userInput+"&limit=9&start_date="+nowInSeconds+"&sort_on=time_start&sort_by=asc";
+        queryYelpPlaces = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+userInput+"&categories=museums&limit=10";
+        
+        //next we are going to call our api's
+        //using a ajax call, we call our url and methond
+        //when we get a response, we update each section;
+        $.ajax({
+            url: queryWeather,
+            method: "GET"
+        }).then(updateWeather);
+        
+        $.ajax({
+            url: querySky,
+            method: "GET"
+        }).then(updateSky);
+
+        $.ajax({
+            url: queryNYT,
+            method: "GET"
+        }).then(updateNYT);
+
+        $.ajax({
+            url: queryYelpFood,
+            headers: {
+                'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
+            },
+            method: "GET"
+        }).then(updateYelpFood);
     
-    $.ajax({
-        url: querySky,
-        method: "GET"
-    }).then(updateSky);
 
-    $.ajax({
-        url: queryNYT,
-        method: "GET"
-    }).then(updateNYT);
+        $.ajax({
+            url: queryYelpEvents,
+            headers: {
+                'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
+            },
+            method: "GET"
+        }).then(updateYelpEvent);
 
-    $.ajax({
-        url: queryYelpFood,
-        headers: {
-            'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
-           },
-        method: "GET"
-    }).then(updateYelpFood);
-   
-
-    $.ajax({
-        url: queryYelpEvents,
-        headers: {
-            'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
-           },
-        method: "GET"
-    }).then(updateYelpEvent);
-
-    $.ajax({
-        url: queryYelpPlaces,
-        headers: {
-            'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
-           },
-        method: "GET"
-    }).then(updateYelpPlaces);
+        $.ajax({
+            url: queryYelpPlaces,
+            headers: {
+                'Authorization':'Bearer 2ozrOdoM-iqGVuP5uozgiBk6CunvT4pCllsN7PdRctZR63EopSt0ZruMP-E6Xiv7YOzffRRDGwVqUUwMLjVdKlYk_n49Q9d7WpshV0LSbgThn9oclFErTIuS14ECXXYx',
+            },
+            method: "GET"
+        }).then(updateYelpPlaces);
+    }
 });
+
 

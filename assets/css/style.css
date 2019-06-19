@@ -235,6 +235,11 @@ a {
     text-align: center;
 }
 
+#error {
+    color: white;
+    font-weight: bold;
+}
+
 
 .carousel-control-next, .carousel-control-prev{
     background-color: rgba(124, 124, 124, 0.37);
